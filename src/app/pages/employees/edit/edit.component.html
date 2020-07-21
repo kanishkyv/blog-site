@@ -1,0 +1,31 @@
+
+<div >
+    <h2>{{ header }}</h2>
+    <form  (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div>
+            <label for="">Id &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   </label>
+            <input type="text"  [ngModel]="employee.id" name="id">
+        </div>
+        <div>
+            <label for="">Title &nbsp;&nbsp;</label>
+            <input type="text"    [ngModel]="employee.title" name="title">
+        </div>
+        <div>
+            <label for="">Content &nbsp;&nbsp;</label>
+            <input type="text"    [ngModel]="employee.content" name="content">
+        </div>
+        <div>
+            <label for="">Username &nbsp;</label>
+            <input type="text"    [ngModel]="employee.username" name="username">
+        </div>
+        <div>
+            <label for="">CreatedOn &nbsp;</label>
+            <input type="text"    [ngModel]="employee.createdOn" name="createdOn">
+        </div>
+        <hr>
+        <div>
+            
+           <button mat-raised-button color="primary" type="submit">Save</button>
+        </div>
+    </form>
+</div>

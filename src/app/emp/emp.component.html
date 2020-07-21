@@ -1,0 +1,28 @@
+<div >
+    <h2>Blog Listing</h2>
+    <label for="">Search</label>
+    <input type="text" [(ngModel)]="title" (input)="Search()" />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button mat-raised-button color="accent" [routerLink]="['blog/add/0']" >Add Blog</button>
+    <table style="border:2px solid black" >
+        <thead>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Username</th>
+            <th>CreatedOn</th>
+            <th></th>
+            <th></th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees">
+                <td>{{employee.id}}</td>
+                <td>{{employee.title}}</td>
+                <td>{{employee.username}}</td>
+                <td>{{employee.createdOn}}</td>
+                <td><button mat-raised-button color="primary" [routerLink]="['blog/edit',employee.id]">Edit</button></td>
+                <td><button mat-raised-button color="warn" (click)="onDelete(employee.id)">Delete</button></td>
+                <td><button mat-raised-button color="primary" [routerLink]="['blog/view',employee.id]">View</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
